@@ -42,11 +42,13 @@
     });
   });
 
-	  function showTab(id) {
+	  function showTab(id, btn) {
 		  const tabs = document.querySelectorAll('.tab-content');
 		  tabs.forEach(tab => tab.style.display = 'none');
-		  const selected = document.getElementById(id);
-		  if (selected) selected.style.display = 'block';
+		  const buttons = document.querySelectorAll('.tab-btn');
+		  buttons.forEach(button => button.classList.remove('active'));
+		  document.getElementById(id).style.display = 'block';
+		  btn.classList.add('active');
 	  }
 	  
 </script>
@@ -193,6 +195,8 @@
 		  background: white; 
 		  color:#1181b2;
 	  }
+
+	  <!-- Styling for tabs in Supervision section -->
 	  .tab-btn {
 		  background-color: #023047;
 		  color: white;
@@ -202,8 +206,29 @@
 		  cursor: pointer;
 		  border-radius: 5px;
 	  }
-	  .tab-btn:hover {
-		  background-color: darkorange;
+	  .tab-btn:hover,
+	    .tab-btn.active {
+		    background-color: darkorange;
+	    }
+	  .student-card {
+		  display: flex;
+		  align-items: center;
+		  gap: 1rem;
+		  background-color: #fff;
+		  border-radius: 8px;
+		  padding: 1rem;
+		  margin-bottom: 1rem;
+		  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	  }
+	  .student-card img {
+		  width: 80px;
+		  height: 80px;
+		  object-fit: cover;
+		  border-radius: 50%;
+		  border: 2px solid #ccc;
+	  }
+	  .student-card div {
+		  flex: 1;
 	  }
   </style>
 </head>
@@ -574,62 +599,75 @@
 
 <section id="supervision">
 <h2>SUPERVISION &amp; MENTORSHIP</h2>
-
-  <!-- Tab buttons -->
-  <div style="display: flex; justify-content: left; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-    <button class="tab-btn" onclick="showTab('msc')">50 MSc Students</button>
-    <button class="tab-btn" onclick="showTab('phd')">10 PhD Students</button>
-    <button class="tab-btn" onclick="showTab('postdoc')">5 Postdoctoral Researchers</button>
+  
+  <!-- Tab Buttons -->
+  <div id="supervision-tabs" style="display: flex; justify-content: left; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+    <button class="tab-btn active" onclick="showTab('msc', this)">50 MSc Students</button>
+    <button class="tab-btn" onclick="showTab('phd', this)">10 PhD Students</button>
+    <button class="tab-btn" onclick="showTab('postdoc', this)">5 Postdoctoral Researchers</button>
   </div>
 
-  <!-- MSc Content -->
-  <div id="msc" class="tab-content" style="display: none;">
-    <ul style="list-style: none; padding: 0;">
-      <li>
+  <!-- Tab Content Containers -->
+
+  <div id="msc" class="tab-content">
+    <div class="student-card">
+      <!--<img src="images/alice.jpg" alt="Alice Nielsen" />-->
+      <div>
         <strong>Mohammadpouya Mostashar</strong> (2025)<br>
         <em>“Power flow and topology optimization in meshed offshore HVDC Systems”</em>
-      </li>
-      <li>
+      </div>
+    </div>
+    <div class="student-card">
+      <!--<img src="images/magnus.jpg" alt="Magnus Sørensen" />-->
+      <div>
         <strong>Laura Nørgaard Lund</strong> (2025)<br>
         <em>“Operation of hybrid power plants for value maximization though power purchase agreement and electricity market participation”</em>
-      </li>
-      <!-- Add more MSc entries here -->
-    </ul>
+      </div>
+    </div>
   </div>
 
-  <!-- PhD Content -->
   <div id="phd" class="tab-content" style="display: none;">
-    <ul style="list-style: none; padding: 0;">
-      <li>
+    <div class="student-card">
+      <!--<img src="images/jane.jpg" alt="Jane Doe" />-->
+      <div>
         <strong>Mohammadhassan Bahmani</strong> (2027)<br>
         <em>“Integration of balancing markets in the modelling of sector-coupled energy systems”</em>, Co-supervisor
-      </li>
-      <li>
+      </div>
+    </div>
+    <div class="student-card">
+      <!--<img src="images/john.jpg" alt="John Smith" />-->
+      <div>
         <strong>Katarina Obradovic</strong> (2026)<br>
         <em>“Physical and Electrical Design of Hybrid Power Plants”, Co-supervisor</em>
-      </li>
-      <li>
-        <strong>Aivaras Celna</strong> (2026)<br>Robust Control and Stability of Multi-vendor and Multi-technology 
-	      Hybrid Power PlantsPhysical and Electrical Design of Hybrid Power Plants”</em>, Main supervisor
-      </li>
-      <!-- Add more PhD entries here -->
-    </ul>
+      </div>
+    </div>
+    <div class="student-card">
+      <!--<img src="images/john.jpg" alt="John Smith" />-->
+      <div>
+        <strong>Aivaras Celna</strong> (2026)<br>
+	      <em>Robust Control and Stability of Multi-vendor and Multi-technology 
+		      Hybrid Power PlantsPhysical and Electrical Design of Hybrid Power Plants”</em>, Main supervisor
+      </div>
+    </div>
   </div>
 
-  <!-- Postdoc Content -->
   <div id="postdoc" class="tab-content" style="display: none;">
-    <ul style="list-style: none; padding: 0;">
-      <li style="margin-bottom: 1rem;">
+    <div class="student-card">
+      <!--<img src="images/emily.jpg" alt="Emily Rahman" />-->
+      <div>
         <strong>Sumanth Yamujala</strong> (2022–present)<br>
         <em>Power system balancing and energy system modelling</em>
-      </li>
-      <li style="margin-bottom: 1rem;">
+      </div>
+    </div>
+    <div class="student-card">
+      <!--<img src="images/kasper.jpg" alt="Kasper Lund" />-->
+      <div>
         <strong>Megha Gupta</strong> (2022–present)<br>
         <em>Sizing and energy management system of hybrid power plants</em>
-      </li>
-      <!-- Add more postdocs here -->
-    </ul>
+      </div>
+    </div>
   </div>
+  
 </section>
 
 	
