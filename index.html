@@ -211,12 +211,14 @@
 	  .tab-btn {
 		  background-color: #1181b2;
 		  color: white;
-		  border: 0.2rem;
+		  border: 2px solid transparent; /* ensures space for border even when inactive */
 		  padding: 0.6rem 1.2rem;
 		  font-size: 1rem;
 		  cursor: pointer;
 		  border-radius: 5px;
-	  }
+		  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		  transition: all 0.3s ease;
+		}
 	  .tab-btn:hover,
 	    .tab-btn.active {
 		    background-color: darkorange;
