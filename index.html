@@ -50,6 +50,17 @@
 		  document.getElementById(id).style.display = 'block';
 		  btn.classList.add('active');
 	  }
+
+	  function showProjectsTab(id, btn) {
+		  const contents = document.querySelectorAll('#projects .tab-content');
+		  contents.forEach(c => c.style.display = 'none');
+
+		  const buttons = document.querySelectorAll('#project-tabs .tab-btn');
+		  buttons.forEach(b => b.classList.remove('active'));
+
+		  document.getElementById(id).style.display = 'block';
+		  btn.classList.add('active');
+	  }
 	  
 </script>
 
@@ -229,7 +240,12 @@
 	  .student-card div {
 		  flex: 1;
 	  }
-  </style>
+	  #projects ul {
+		  list-style: disc;
+		  padding-left: 1.5rem;
+		  line-height: 1.6;
+	  }
+	  </style>
 </head>
 <body>
 
@@ -309,9 +325,54 @@
 
 </section>
 
+
 <section id="projects">
+  <h2>PROJECTS</h2>
+
+  <!-- Tab Buttons -->
+  <div id="project-tabs" style="display: flex; justify-content: left; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+    <button class="tab-btn active" onclick="showProjectsTab('current', this)">Current Projects</button>
+    <button class="tab-btn" onclick="showProjectsTab('past', this)">Past Projects</button>
+  </div>
+
+  <!-- Current Projects -->
+  <div id="current" class="tab-content">
+    <ul>
+      <li><strong><a href="https://orbit.dtu.dk/en/projects/grid-enhancement-for-ancillaries-in-tomorrows-power-systems" target="_blank">GREAT</a>:</strong> GRid Enhancement for Ancillaries in Tomorrow’s power systems (PI), funded by DTEC, EUR 3.2 million</li>
+      <li><strong><a href="https://orbit.dtu.dk/en/projects/national-energy-system-transition-facilities" target="_blank">NEST Facilities</a>:</strong> National Energy System Transition Facilities (Data Steward), funded by NUFI, 20 MDKK</li>
+      <li><strong><a href="https://dtwo-project.eu/" target="_blank">DTWO</a>:</strong> Federated Digital Twins for Wind-Offshore (WP Leader), funded by Horizon Europe, EUR 769,656</li>
+      <li><strong><a href="https://orbit.dtu.dk/en/projects/h2bridge" target="_blank">H2BRIDGE</a>:</strong> GINP project between India and Denmark on green H₂, hybrid energy plants and integration</li>
+      <li><strong><a href="https://havenproject.eu/haven-project" target="_blank">HAVEN</a>:</strong> Hybrid energy storage for grid and EV support, Horizon Europe, EUR 5.9 million</li>
+      <li><strong><a href="https://solarx-project.eu/" target="_blank">SOLARX</a>:</strong> Dispatchable Solar-to-X energy solution, Horizon Europe, EUR 3 million</li>
+      <li><strong><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/43108390/101168796/HORIZON" target="_blank">FITNESS</a>:</strong> Smart grid project, Horizon Europe, EUR 2.6 million</li>
+      <li><strong><a href="https://twinsolar.eu/en/" target="_blank">TwinSolar</a>:</strong> Solar renewables integration, Horizon Europe, EUR 1.48 million</li>
+      <li><strong><a href="https://iea-wind.org/task50/" target="_blank">IEA Wind Task 50</a>:</strong> Global hybrid wind R&D coordination (Operating Agent)</li>
+      <li><strong><a href="https://orbit.dtu.dk/en/projects/hybrids-life-cycle-optimization-project" target="_blank">Hybrids Life-Cycle Optimization</a>:</strong> HPP design and control strategies (co-PI), DTEC</li>
+    </ul>
+  </div>
+
+  <!-- Past Projects -->
+  <div id="past" class="tab-content" style="display: none;">
+    <ul>
+      <li><strong><a href="https://orbit.dtu.dk/en/projects/optimized-design-and-operation-of-hybrid-power-plant" target="_blank">HYBRIDize</a>:</strong> Hybrid plant design optimization (PI), Innovationsfonden, 7 MDKK</li>
+      <li><strong>COMPAS</strong></li>
+      <li><strong><a href="https://wind.dtu.dk/projects/research-projects/realise" target="_blank">REALISE</a>:</strong> Renewable Energy Analytics for Investment & Engineering</li>
+      <li><strong><a href="https://wind.dtu.dk/projects/research-projects/hybrid-energy-storage" target="_blank">Hybrid Energy Storage</a>:</strong> Battery-supercapacitor system with wind turbine, EUDP</li>
+      <li><strong><a href="https://www.wingrid.org/" target="_blank">WinGrid</a>:</strong> Hybrid wind coordination for balancing markets, Marie-Curie ITN</li>
+      <li><strong><a href="https://www.windfarmcontrol.info/" target="_blank">FarmConners</a>:</strong> Farm flow control for grid & market, EU H2020</li>
+      <li><strong><a href="https://www.totalcontrolproject.eu/" target="_blank">TotalControl</a>:</strong> Reactive power dispatch optimization, EU H2020</li>
+      <li><strong><a href="https://orbit.dtu.dk/en/projects/north-sea-offshore-network-denmark" target="_blank">NSON-DK</a>:</strong> Reserve and market analysis for offshore interconnectors</li>
+      <li><strong><a href="https://www.offshorewake.dk/" target="_blank">OffshoreWake</a>:</strong> Offshore wake impact on Danish power system</li>
+      <li><strong><a href="https://energiforskning.dk/en/node/15351" target="_blank">NetVind</a>:</strong> Danish Forskel Project</li>
+      <li><strong><a href="https://interreg-baltic.eu/project/baltic-integrid/" target="_blank">Baltic InteGrid</a>:</strong> Interconnection project, European InterReg</li>
+      <li><strong><a href="https://orbit.dtu.dk/en/projects/innovative-tools-for-electrical-system-security-within-large-area" target="_blank">iTesla</a>:</strong> System security tools, EU FP7</li>
+    </ul>
+  </div>
+</section>
+
+<!--<section id="projects">
    
-   <h3>PROJECTS</h3>
+   <h2>PROJECTS</h2>
     <ul>
       <li><strong><a href="https://orbit.dtu.dk/en/projects/grid-enhancement-for-ancillaries-in-tomorrows-power-systems" target="_blank">GREAT</a>:</strong> GRid Enhancement for Ancillaries in Tomorrow’s power systems (PI), funded by DTEC, EUR 3.2 million</li>
       <li><strong><a href="https://orbit.dtu.dk/en/projects/national-energy-system-transition-facilities" target="_blank">NEST Facilities</a>:</strong> National Energy System Transition Facilities (Data Steward), funded by National Council on Research Infrastructure, NUFI, 20 MDKK</li>	    
@@ -343,7 +404,7 @@
 	
 	
 	
-</section>
+</section>-->
 
 
 <section id="software">
