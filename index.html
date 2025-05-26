@@ -211,7 +211,7 @@
 	  .tab-btn {
 		  background-color: #1181b2;
 		  color: white;
-		  border: none;
+		  border: 0.2rem;
 		  padding: 0.6rem 1.2rem;
 		  font-size: 1rem;
 		  cursor: pointer;
@@ -355,8 +355,8 @@
 
   <!-- Tab Buttons -->
   <div id="project-tabs" style="display: flex; justify-content: left; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-    <button class="tab-btn active" onclick="showProjectsTab('current', this)">Ongoing</button>
-    <button class="tab-btn" onclick="showProjectsTab('past', this)">Past projects</button>
+    <button class="tab-btn active" onclick="showProjectsTab('current', this)"><b>Ongoing</b></button>
+    <button class="tab-btn" onclick="showProjectsTab('past', this)"><b>Past projects</b></button>
   </div>
 
   <!-- Current Projects -->
@@ -628,7 +628,11 @@
 		Online master, 5 ECTS, Spring semester<br>
 		<a href="https://kurser.dtu.dk/course/46W47" target="_blank">46W47 Hybrid power plants</a><br>
 		<br>
-		<div style="max-width: 600px; position: relative; width: 100%; padding-top: 75%; height: 0; overflow: hidden;">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/UiXHgY2QuKM?si=PcR1Ak6iLYi-TO7E" 
+				 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+				 encrypted-media; gyroscope; picture-in-picture; web-share" 
+				 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<!--<div style="max-width: 600px; position: relative; width: 100%; padding-top: 75%; height: 0; overflow: hidden;">
 		  <iframe 
 		    src="https://www.youtube.com/embed/UiXHgY2QuKM?si=PcR1Ak6iLYi-TO7E"
 		    title="YouTube video player"
@@ -637,7 +641,7 @@
 		    referrerpolicy="strict-origin-when-cross-origin"
 		    allowfullscreen>
 		  </iframe>
-		</div>
+		</div>-->
 	  </li>
 	  <br>
 	  <li>
@@ -722,9 +726,9 @@
   
   <!-- Tab Buttons -->
   <div id="supervision-tabs" style="display: flex; justify-content: left; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-    <button class="tab-btn active" onclick="showTab('msc', this)">50 MSc Students</button>
-    <button class="tab-btn" onclick="showTab('phd', this)">10 PhD Students</button>
-    <button class="tab-btn" onclick="showTab('postdoc', this)">5 Postdoctoral Researchers</button>
+    <button class="tab-btn active" onclick="showTab('msc', this)"><b>50 MSc Students</b></button>
+    <button class="tab-btn" onclick="showTab('phd', this)"><b>10 PhD Students</b></button>
+    <button class="tab-btn" onclick="showTab('postdoc', this)"><b>5 Postdoctoral Researchers</b></button>
   </div>
 
   <!-- Tab Content Containers -->
