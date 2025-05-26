@@ -41,6 +41,14 @@
       });
     });
   });
+
+	  function showTab(id) {
+		  const tabs = document.querySelectorAll('.tab-content');
+		  tabs.forEach(tab => tab.style.display = 'none');
+		  const selected = document.getElementById(id);
+		  if (selected) selected.style.display = 'block';
+	  }
+	  
 </script>
 
 
@@ -184,6 +192,18 @@
 	  section:nth-of-type(odd) {
 		  background: white; 
 		  color:#1181b2;
+	  }
+	  .tab-btn {
+		  background-color: #023047;
+		  color: white;
+		  border: none;
+		  padding: 0.6rem 1.2rem;
+		  font-size: 1rem;
+		  cursor: pointer;
+		  border-radius: 5px;
+	  }
+	  .tab-btn:hover {
+		  background-color: darkorange;
 	  }
   </style>
 </head>
@@ -553,7 +573,59 @@
 </section>
 
 <section id="supervision">
-	<h2>SUPERVISION</h2>
+	<h2 style="text-align: center; margin-bottom: 2rem;">Supervision & Mentorship</h2>
+
+  <!-- Tab buttons -->
+  <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+    <button class="tab-btn" onclick="showTab('msc')">55 MSc Students</button>
+    <button class="tab-btn" onclick="showTab('phd')">10 PhD Students</button>
+    <button class="tab-btn" onclick="showTab('postdoc')">Postdoctoral Researchers</button>
+  </div>
+
+  <!-- MSc Content -->
+  <div id="msc" class="tab-content" style="display: none;">
+    <ul style="list-style: none; padding: 0;">
+      <li style="margin-bottom: 1rem;">
+        <strong>Alice Nielsen</strong> (2024)<br>
+        <em>“Hydrogen-Based Energy Storage Design in Islanded Grids”</em>
+      </li>
+      <li style="margin-bottom: 1rem;">
+        <strong>Magnus Sørensen</strong> (2023)<br>
+        <em>“Control Strategies for Hybrid Renewable Microgrids”</em>
+      </li>
+      <!-- Add more MSc entries here -->
+    </ul>
+  </div>
+
+  <!-- PhD Content -->
+  <div id="phd" class="tab-content" style="display: none;">
+    <ul style="list-style: none; padding: 0;">
+      <li style="margin-bottom: 1.5rem;">
+        <strong>Jane Doe</strong> (2024)<br>
+        <em>“Optimization of Energy Storage Systems in Hybrid Power Plants”</em>
+      </li>
+      <li style="margin-bottom: 1.5rem;">
+        <strong>John Smith</strong> (2023)<br>
+        <em>“Coupled Modelling of Wind and Solar Integration in Nordic Grids”</em>
+      </li>
+      <!-- Add more PhD entries here -->
+    </ul>
+  </div>
+
+  <!-- Postdoc Content -->
+  <div id="postdoc" class="tab-content" style="display: none;">
+    <ul style="list-style: none; padding: 0;">
+      <li style="margin-bottom: 1rem;">
+        <strong>Dr. Emily Rahman</strong> (2022–2024)<br>
+        <em>Research on MDAO Frameworks for Hybrid Systems</em>
+      </li>
+      <li style="margin-bottom: 1rem;">
+        <strong>Dr. Kasper Lund</strong> (2021–2023)<br>
+        <em>Energy Storage Integration in European Power Markets</em>
+      </li>
+      <!-- Add more postdocs here -->
+    </ul>
+  </div>
 </section>
 
 	
