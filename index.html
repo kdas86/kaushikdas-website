@@ -222,6 +222,7 @@
 	  .tab-btn:hover,
 	    .tab-btn.active {
 		    background-color: darkorange;
+		    border: 2px solid darkorange;
 	    }
 	  .student-card {
 		  display: flex;
@@ -357,8 +358,8 @@
 
   <!-- Tab Buttons -->
   <div id="project-tabs" style="display: flex; justify-content: left; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-    <button class="tab-btn active" onclick="showProjectsTab('current', this)"><b>Ongoing</b></button>
-    <button class="tab-btn" onclick="showProjectsTab('past', this)"><b>Past projects</b></button>
+    <button class="tab-btn active" onclick="showProjectsTab('current', this)">Ongoing</button>
+    <button class="tab-btn" onclick="showProjectsTab('past', this)">Past projects</button>
   </div>
 
   <!-- Current Projects -->
@@ -728,9 +729,9 @@
   
   <!-- Tab Buttons -->
   <div id="supervision-tabs" style="display: flex; justify-content: left; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-    <button class="tab-btn active" onclick="showTab('msc', this)"><b>50 MSc Students</b></button>
-    <button class="tab-btn" onclick="showTab('phd', this)"><b>10 PhD Students</b></button>
-    <button class="tab-btn" onclick="showTab('postdoc', this)"><b>5 Postdoctoral Researchers</b></button>
+    <button class="tab-btn active" onclick="showTab('msc', this)">50 MSc Students</button>
+    <button class="tab-btn" onclick="showTab('phd', this)">10 PhD Students</button>
+    <button class="tab-btn" onclick="showTab('postdoc', this)">5 Postdoctoral Researchers</button>
   </div>
 
   <!-- Tab Content Containers -->
