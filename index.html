@@ -129,6 +129,14 @@
 		  font-weight: normal;
 		  margin-right: 0.5rem;
 	  }
+	  ol.reversed-brackets-patent {
+		  list-style: none;
+	  }
+	  ol.reversed-brackets-patent li::before {
+		  content: "[" attr(data-index) "]";
+		  font-weight: normal;
+		  margin-right: 0.5rem;
+	  }
 	  section:nth-of-type(even) {
 		  background: #1181b2;
 		  color:#ddedf4;
@@ -376,9 +384,8 @@
 
   <ol class='reversed-brackets-patent'>
   <details>
-  <summary>Patents
-  </summary>
-  	<li>Assaad C, Murcia Leon JP, <b>Das, Kaushik</b>, Ghazouani S, and Sørensen P. <em>Surrogate based hybrid system sizing optimization under uncertainty. Submitted for filing</em>.</li>
+  <summary>Patents</summary>
+  	<li>Assaad C, Murcia Leon JP, <b>Das, Kaushik</b>, Ghazouani S, and Sørensen P. <em>Surrogate based hybrid system sizing optimization under uncertainty.</em> Submitted for filing.</li>
 	<li>Arya V, <b>Das, Kaushik</b>, Hazra J, Kalyanaraman S, Narayanaswamy B, and Seetharamakrishnan DP. <em>Non-technical loss detection and localization.</em>. <a href="https://patents.google.com/patent/US9536198B2/en" target="_blank">US Patent 9,536,198</a>.</li>
 	<li>Basu C, Das, <b>Kaushik</b>, Finkler UA, Hazra J, Kumar AP, Seetharamakrishnan DP, and Singhee A. <em>Electric outage detection and localization.</em>. <a href="https://patents.google.com/patent/US9841456B2/en" target="_blank">US Patent 9,841,456</a>.</li>
 	<li><b>Das, Kaushik</b>, Hazra J, Jespersen N, Narayanaswamy B, and Seetharamakrishnan DP. <em>Condition-based management of power transformers.</em>. US Patent 9,312,695.</li>
