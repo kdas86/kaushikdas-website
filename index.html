@@ -6,29 +6,18 @@
   <meta name="description" content="Hybrid power plants, renewable power, grid integration and power systems expert at Technical University of Denmark, DTU.">
   <title>Kaushik Das – Associate Professor at DTU</title>
   <script>
-	document.addEventListener("DOMContentLoaded", function () {
-    const items = document.querySelectorAll("ol.reversed-brackets-journal li");
-    const total = items.length;
-    items.forEach((li, i) => {
-      li.setAttribute("data-index-journal", total - i);
-    });
-    });
-	
-	document.addEventListener("DOMContentLoaded", function () {
-    const items = document.querySelectorAll("ol.reversed-brackets-conf li");
-    const start = items.length;
-    items.forEach((li, i) => {
-      li.setAttribute("data-index", start - i);
-    });
-	});
-	
-	document.addEventListener("DOMContentLoaded", function () {
-    const items = document.querySelectorAll("ol.reversed-brackets-bookChapter li");
-    const start = items.length;
-    items.forEach((li, i) => {
-      li.setAttribute("data-index", start - i);
-    });
-	});
+	  document.addEventListener("DOMContentLoaded", function () {
+		  const updateIndexes = (selector, attrName) => {
+			  const items = document.querySelectorAll(selector + " li");
+			  const total = items.length;
+			  items.forEach((li, i) => {
+				  li.setAttribute(attrName, total - i);
+			  });
+		  };
+		  updateIndexes("ol.reversed-brackets-journal", "data-index-journal");
+		  updateIndexes("ol.reversed-brackets-conf", "data-index");
+		  updateIndexes("ol.reversed-brackets-bookChapter", "data-index");
+	  });
   </script>
 
   <style>
@@ -139,11 +128,11 @@
 		  font-weight: normal;
 		  margin-right: 0.5rem;
 	  }
-	  section:nth-of-type(odd) {
+	  section:nth-of-type(even) {
 		  background: #1181b2;
 		  color:#ddedf4;
 	  }
-	  section:nth-of-type(even) {
+	  section:nth-of-type(odd) {
 		  background: white; 
 		  color:#1181b2;
 	  }
