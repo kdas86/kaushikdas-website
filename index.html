@@ -32,38 +32,38 @@
   </script>
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      margin: 0;
-      font-family: brooklyn;
-    }
-    nav {
-	    position: fixed;
-	    top: 0;
-	    width: 98%;
-	    display: flex;
-	    justify-content: space-between;
-	    align-items: center;
-	    background: #212221; 
-	    text-align: right;
-	    padding: 0.5rem 1rem;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
+	  html {
+		  scroll-behavior: smooth;
+	  }
+	  body {
+		  margin: 0;
+		  font-family: brooklyn;
+	  }
+	  nav {
+		  position: fixed;
+		  top: 0;
+		  width: 98%;
+		  display: flex;
+		  justify-content: space-between;
+		  align-items: center;
+		  background: #212221; 
+		  text-align: right;
+		  padding: 0.5rem 1rem;
+	  }
+	  nav a {
+		  color: white;
+		  margin: 0 1rem;
+		  text-decoration: none;
+		  font-weight: bold;
+	  }
 	  nav a:hover {
 		  color: darkorange;
-		  }
-	h1 {
-	  color: white;
-	  font-size: 2.5rem;
-	  magin-bottom: 1.5rem;
-	}
+	  }
+	  h1 {
+		  color: white;
+		  font-size: 2.5rem;
+		  magin-bottom: 1.5rem;
+	  }
 	.hero {
       background: url('images/profile.jpg') no-repeat left center;
       background-size: contain;
@@ -139,6 +139,14 @@
 	 font-weight: normal;
 	 margin-right: 0.5rem;
     }
+	  section:nth-of-type(odd) {
+		  background: #1181b2;
+		  color:#ddedf4;
+	  }
+	  section:nth-of-type(even) {
+		  background: white; 
+		  color:#1181b2;
+	  }
   </style>
 </head>
 <body>
@@ -188,7 +196,7 @@
 </div>
 </section>
 
-<section id="research" style="background: #1181b2;color:#ddedf4;">
+<section id="research">
   <h2>RESEARCH OVERVIEW</h2>
   <h3>Research Areas</h3>
   <ul>
@@ -248,7 +256,7 @@
 	
 </section>
 
-<section id="publications" style="background: white; color:#1181b2;">
+<section id="publications">
   <h2>PUBLICATIONS</h2>
   
   <ol class='reversed-brackets-journal'>
@@ -379,7 +387,7 @@
 
 </section>
 
-<section id="teaching" style="background: #1181b2;color:#ddedf4;">
+<section id="teaching">
   <h2>TEACHING</h2>
   <p class="justified">My pedagogical view is to develop the curiosity among the students about the subject I am teaching such that 
 		<em>the students should be able to have the conceptual understanding of the fundamental principles and ability to apply the concept in solving a real-world problem.</em>
@@ -462,12 +470,12 @@
 	
 </section>
 
-<section id="supervision" style="background: white; color:#1181b2;">
+<section id="supervision">
 	<h2>SUPERVISION</h2>
 </section>
 
 	
-<section id="cv" style="background: white; color:#1181b2;">
+<section id="cv">
   <h2>CURRICULUM VITAE</h2>
   <a href="CV_full.pdf" download target="_blank"> Download CV</a>
 </section>
