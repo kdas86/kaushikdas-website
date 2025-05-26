@@ -6,20 +6,43 @@
   <meta name="description" content="Hybrid power plants, renewable power, grid integration and power systems expert at Technical University of Denmark, DTU.">
   <title>Kaushik Das – Associate Professor at DTU</title>
   <script>
-	  document.addEventListener("DOMContentLoaded", function () {
-		  const updateIndexes = (selector, attrName) => {
-			  const items = document.querySelectorAll(selector + " li");
-			  const total = items.length;
-			  items.forEach((li, i) => {
-				  li.setAttribute(attrName, total - i);
-			  });
-		  };
-		  updateIndexes("ol.reversed-brackets-journal", "data-index-journal");
-		  updateIndexes("ol.reversed-brackets-conf", "data-index");
-		  updateIndexes("ol.reversed-brackets-bookChapter", "data-index");
-		  updateIndexes("ol.reversed-brackets-patent", "data-index");
-	  });
-  </script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Auto-numbering for publications
+    const updateIndexes = (selector, attrName) => {
+      const items = document.querySelectorAll(selector + " li");
+      const total = items.length;
+      items.forEach((li, i) => {
+        li.setAttribute(attrName, total - i);
+      });
+    };
+    updateIndexes("ol.reversed-brackets-journal", "data-index-journal");
+    updateIndexes("ol.reversed-brackets-conf", "data-index");
+    updateIndexes("ol.reversed-brackets-bookChapter", "data-index");
+    updateIndexes("ol.reversed-brackets-patent", "data-index");
+
+    // Scroll-based navbar highlight
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  });
+</script>
+
 
   <style>
 	  html {
@@ -48,6 +71,11 @@
 	  }
 	  nav a:hover {
 		  color: darkorange;
+	  }
+	  nav a.active {
+		  color: darkorange;
+		  font-weight: bold;
+		  border-bottom: 2px solid darkorange;
 	  }
 	  h1 {
 		  color: white;
