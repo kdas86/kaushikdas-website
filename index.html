@@ -72,6 +72,17 @@
 		  document.getElementById(id).style.display = 'block';
 		  btn.classList.add('active');
 	  }
+
+	  function showSupervisionsTab(id, btn) {
+		  const contents = document.querySelectorAll('#supervision .tab-content');
+		  contents.forEach(c => c.style.display = 'none');
+
+		  const buttons = document.querySelectorAll('#supervision-tabs .tab-btn');
+		  buttons.forEach(b => b.classList.remove('active'));
+
+		  document.getElementById(id).style.display = 'block';
+		  btn.classList.add('active');
+	  }
 	  
 </script>
 
